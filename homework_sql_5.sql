@@ -30,7 +30,7 @@ group by date_received;
 -- значение quantity только для товаров где purchase_order_id не больше 100
 select unit_cost, avg(quantity) as avg_quantity, max(quantity) as max_quantity 
 from northwind.purchase_order_details
-where purchase_order_id > 100
+where purchase_order_id <= 100
 group by unit_cost order by unit_cost;
 
 -- 7. Выберите только строки где есть значения в столбце inventory_id 
